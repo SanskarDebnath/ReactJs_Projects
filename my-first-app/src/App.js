@@ -1,19 +1,90 @@
 import React, { useState } from 'react';
 import './App.css';
+import myImage from './assets/image.png'; // adjust the path if you're in a nested folder
+
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false); // Add this state for mobile menu
-  const projects = Array(16).fill({
-    title: "Project Title",
-    description: "A brief description of the project and its technologies.",
-    githubLink: "https://github.com/yourusername/projectname",
-    imageUrl: "https://via.placeholder.com/400x250"
-  });
+  const projects = [
+    {
+      title: "WRITE2DIGIT AI",
+      description: "I developed an OCR-based web application that converts handwritten content into digital text using Python and machine learning. This project utilizes the LeNet-5 architecture, achieving model accuracies close to 99.88%, approaching near-perfect performance. The solution is structured into three separate models, each trained and evaluated independently. Every model includes its own testing accuracy and performance graphs to demonstrate effectiveness and reliability in real-world scenarios.",
+      githubLink: "https://github.com/yourusername/write2digit-ai",
+      // imageUrl: "https://via.placeholder.com/400x250?text=WRITE2DIGIT+AI"
+      technology: [
+        { name: 'Python' },
+        { name: 'TensorFlow' },
+        { name: 'OCR' },
+      ]
+    },
+    {
+      title: "Microsoft Edge profile picker",
+      description: "I developed a custom Microsoft Edge profile picker that enables quick and easy profile switching with a sleek, user-friendly interface. The app features customizable avatars, icons, and wallpapers, which persist across sessions. Built with Python and Tkinter, it allows you to define profiles and manage settings seamlessly. Additionally, I optimized the app for better performance and quick startup using PyInstaller. Future improvements include auto-detection of Edge profiles, customizable themes, and faster optimizations.",
+      githubLink: "https://github.com/yourusername/portfolio-site",
+      technology: [
+        { name: 'Python' },
+        { name: 'Tkinter' },
+        { name: 'Pillow' },
+        { name: 'Json' },
+        { name: 'Py-Installer' },
+      ]
+    },
+    {
+      title: "E-Commerce API",
+      description: "A secure and scalable RESTful API for e-commerce apps using Node.js, Express, and MongoDB.",
+      githubLink: "https://github.com/yourusername/ecommerce-api",
+      imageUrl: "https://via.placeholder.com/400x250?text=E-Commerce+API"
+    },
+    {
+      title: "Blog App with Django",
+      description: "A full-featured blog platform using Django, PostgreSQL, and Bootstrap for styling.",
+      githubLink: "https://github.com/yourusername/django-blog",
+      imageUrl: "https://via.placeholder.com/400x250?text=Django+Blog"
+    },
+    {
+      title: "Chat App",
+      description: "Real-time chat application using Socket.IO and Node.js with user authentication.",
+      githubLink: "https://github.com/yourusername/chat-app",
+      imageUrl: "https://via.placeholder.com/400x250?text=Chat+App"
+    },
+    {
+      title: "ToDo App",
+      description: "Simple task manager app built in React with local storage and priority tagging.",
+      githubLink: "https://github.com/yourusername/todo-app",
+      imageUrl: "https://via.placeholder.com/400x250?text=ToDo+App"
+    },
+    {
+      title: "Face Mask Detector",
+      description: "ML model using OpenCV & TensorFlow to detect if a person is wearing a mask in real-time.",
+      githubLink: "https://github.com/yourusername/face-mask-detector",
+      imageUrl: "https://via.placeholder.com/400x250?text=Mask+Detector"
+    },
+    {
+      title: "Weather App",
+      description: "Weather dashboard using React and OpenWeatherMap API with search and forecasts.",
+      githubLink: "https://github.com/yourusername/weather-app",
+      imageUrl: "https://via.placeholder.com/400x250?text=Weather+App"
+    },
+    {
+      title: "URL Shortener",
+      description: "Mini URL shortener using Node.js and MongoDB with tracking and analytics.",
+      githubLink: "https://github.com/yourusername/url-shortener",
+      imageUrl: "https://via.placeholder.com/400x250?text=URL+Shortener"
+    },
+    {
+      title: "Student Management System",
+      description: "A full-stack student portal using PHP and MySQL with CRUD operations.",
+      githubLink: "https://github.com/yourusername/student-management",
+      imageUrl: "https://via.placeholder.com/400x250?text=Student+System"
+    }
+  ];
+
 
   const skills = [
     { name: "Django", level: 85 },
-    { name: "ReactJS", level: 90 },
+    { name: "PHP", level: 85 },
+    { name: "ReactJS", level: 50 },
     { name: "Machine Learning", level: 80 },
     { name: "Python", level: 95 },
     { name: "C/C++", level: 75 },
@@ -27,21 +98,21 @@ function App() {
   };
 
   return (
-    
+
     <div className={`apple-style-container ${darkMode ? 'dark-mode' : ''}`}>
       {/* Navbar */}
       <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      />
 
-<nav className={`apple-navbar ${darkMode ? 'dark-mode' : ''}`}>
+      <nav className={`apple-navbar ${darkMode ? 'dark-mode' : ''}`}>
         <div className="navbar-content">
           <div className="navbar-left"></div>
           <div className="navbar-center">
-            <h1>Your Name</h1>
+            <h1>Sanskar Debnath</h1>
           </div>
-          <button 
+          <button
             className="mobile-menu-button"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
@@ -49,25 +120,25 @@ function App() {
             {menuOpen ? '✕' : '☰'}
           </button>
           <div className={`navbar-right ${menuOpen ? 'active' : ''}`}>
-            <button 
+            <button
               className="apple-nav-button"
               onClick={() => setMenuOpen(false)}
             >
               Contact
             </button>
-            <button 
+            <button
               className="apple-nav-button"
               onClick={() => setMenuOpen(false)}
             >
               Projects
             </button>
-            <button 
+            <button
               className="apple-nav-button"
               onClick={() => setMenuOpen(false)}
             >
               Resume
             </button>
-            <button 
+            <button
               className="apple-nav-button dark-mode-toggle"
               onClick={() => {
                 toggleDarkMode();
@@ -84,98 +155,118 @@ function App() {
         <div className="about-content">
           <div className="about-text">
             <h2>About Me</h2>
-            <p>
-              Hello! I'm a passionate developer with expertise in web development 
-              and machine learning. I love creating elegant solutions to complex 
-              problems and continuously learning new technologies.
+            <p style={{ textAlign: 'justify' }}>
+              Hi <i class="fa-solid fa-handshake fa-sm" style={{ color: '#ff1900' }}></i>, I’m Sanskar Debnath, a passionate and curious Backend Developer from India, currently in my final year of B.Tech in Computer Science and Engineering at Techno College of Engineering, Agartala.
+
+              My journey into tech started in my first year when I picked up C/C++, which laid the foundation for my logical thinking. In my second year, I dove deep into Data Structures & Algorithms (DSA) and began exploring PHP, where I discovered my love for backend development. As I progressed into my third year, I expanded my skillset with Django, and in my fourth year, I’ve been actively working on real-world projects, including WRITE2DIGIT AI, an OCR-based application that converts handwritten content into digital text.
             </p>
-            <p>
-              With several years of experience in both frontend and backend 
-              development, I specialize in building responsive, user-friendly 
-              applications with clean, maintainable code.
+            <p style={{ textAlign: 'justify' }}>
+              My backend expertise lies in Python, PHP, and Node.js, while I also have working knowledge of JavaScript, Java, and databases like MySQL, PostgreSQL, and Oracle. I enjoy API development and testing, often using Postman in my workflow.
+              After graduation, I aim to pursue M.Tech in Cybersecurity or a related field to deepen my knowledge and explore security-oriented domains further.
             </p>
             <div className="skills-preview">
-              {skills.slice(0, 4).map((skill, index) => (
+              {skills.map((skill, index) => (
                 <span key={index} className="skill-tag">{skill.name}</span>
               ))}
             </div>
           </div>
           <div className="about-image">
-            <img src="https://via.placeholder.com/600x600" alt="Profile" />
+            <img src={myImage} alt="Profile" />
           </div>
+
         </div>
       </section>
 
       {/* Projects Section */}
       <section className={`projects-section ${darkMode ? 'dark-mode' : ''}`}>
-      <h2 style={{ color: '#000000' }}>My Projects</h2>
+        <h2 style={{ color: '#000000' }}>My top 10 Projects</h2>
 
         <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div key={index} className={`project-card ${darkMode ? 'dark-mode' : ''}`}>
-              <div className="project-image">
-                <img src={project.imageUrl} alt={project.title} />
+          {projects && projects.length > 0 ? (
+            projects.map((project, index) => (
+              <div key={index} className={`project-card ${darkMode ? 'dark-mode' : ''}`}>
+                {/* <div className="project-image">
+            <img src={project.imageUrl} alt={project.title} />
+          </div> */}
+                <div className="project-content">
+                  <h2>{project.title}</h2>
+                  <p style={{ textAlign: 'justify', fontSize: '17px'}}>{project.description}</p>
+                  <a href={project.githubLink} className="apple-button">
+                    <i className="fa-brands fa-github" style={{ color: '#ffffff' }}></i>
+                  </a>
+                </div>
+
+                {/* Displaying technologies */}
+                <div className="skills-preview" style={{ paddingLeft: '20px', paddingRight: '20px', paddingBottom: '20px' }}>
+                  {project.technology && project.technology.length > 0 ? (
+                    project.technology.map((tech, index) => (
+                      <span key={index} className="skill-tag" style={{ marginRight: '10px', padding: '5px 10px' }}>
+                        {tech.name}
+                      </span>
+                    ))
+                  ) : (
+                    <span>No technologies listed</span>
+                  )}
+                </div>
+
+
               </div>
-              <div className="project-content">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <a href={project.githubLink} className="apple-button">
-                  View on GitHub
-                </a>
-              </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p>No projects to display</p>
+          )}
         </div>
       </section>
 
 
+
       <section id="timeline" class="py-10">
-  <h2 class="text-3xl font-bold text-center mb-8">My Journey</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>2019</h3>
-        <p>Passed my Matriculation Exam</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>2021</h3>
-        <p>Passed my Higher Secondary Exam</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>2021</h3>
-        <p>Joined B.Tech in CSE</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>2022</h3>
-        <p>Started Learning PHP</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>2023</h3>
-        <p>Learned Django with REST APIs</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>2024–2025</h3>
-        <p>Developing Machine Learning Projects</p>
-      </div>
-    </div>
-  </div>
-</section>
+        <h2 class="text-3xl font-bold text-center mb-8">My Journey</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>2019</h3>
+              <p>Passed my Matriculation Exam</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>2021</h3>
+              <p>Passed my Higher Secondary Exam</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>2021</h3>
+              <p>Joined B.Tech in CSE</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>2022</h3>
+              <p>Started Learning PHP</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>2023</h3>
+              <p>Learned Django with REST APIs</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>2024–2025</h3>
+              <p>Developing Machine Learning Projects</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
 
 
@@ -191,8 +282,8 @@ function App() {
                 <span>{skill.level}%</span>
               </div>
               <div className="apple-progress-bar">
-                <div 
-                  className="progress-fill" 
+                <div
+                  className="progress-fill"
                   style={{ width: `${skill.level}%` }}
                 ></div>
               </div>
