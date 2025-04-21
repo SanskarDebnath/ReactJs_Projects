@@ -31,28 +31,51 @@ function App() {
       ]
     },
     {
-      title: "E-Commerce API",
-      description: "A secure and scalable RESTful API for e-commerce apps using Node.js, Express, and MongoDB.",
+      title: "PHP News Website",
+      description: "I'm currently developing a dynamic news web application using PHP, HTML5, CSS3, JavaScript, and jQuery. The site is structured into three modules: admin, user, and reporter, each with distinct roles and access levels to manage and publish content. The project is still under development, with plans to integrate a payment gateway in the future to enable subscription-based access for premium content and features. This project aims to deliver a modern, scalable platform for digital news delivery.",
       githubLink: "https://github.com/yourusername/ecommerce-api",
-      imageUrl: "https://via.placeholder.com/400x250?text=E-Commerce+API"
+      // imageUrl: "https://via.placeholder.com/400x250?text=E-Commerce+API"
+      technology: [
+        { name: 'PHP' },
+        { name: 'HTML5' },
+        { name: 'CSS3' },
+        { name: 'JavaScript' },
+        { name: 'JQuerry' },
+        { name: 'MYSQL' },
+      ]
     },
     {
-      title: "Blog App with Django",
-      description: "A full-featured blog platform using Django, PostgreSQL, and Bootstrap for styling.",
+      title: "Django E-Commerce website",
+      description: "I built a fully functional eCommerce website using Django, featuring a robust structure with separate modules for users, admin, and shopkeepers. The platform includes essential features like product listing, shopping cart, and user authentication, offering a smooth and organized online shopping experience. The project is complete in terms of core functionality, and I plan to integrate a payment gateway in the future to support secure transactions and order processing.",
       githubLink: "https://github.com/yourusername/django-blog",
-      imageUrl: "https://via.placeholder.com/400x250?text=Django+Blog"
+      technology: [
+        { name: 'Python' },
+        { name: 'Django' },
+        { name: 'HTML/CSS3' },
+        { name: 'JavaScript' },
+        { name: 'Bootstrap' },
+        { name: 'Postgress' },
+      ]
     },
     {
-      title: "Chat App",
-      description: "Real-time chat application using Socket.IO and Node.js with user authentication.",
+      title: "PDF-AUDIO converter",
+      description: "I created a PDF to Audio Converter using Python that reads content from any PDF file and converts it into an audio file. The app uses PyPDF2 for extracting text from PDFs and gTTS (Google Text-to-Speech) to generate speech. Once processed, the audio file is automatically saved to a designated folder. This tool is simple, efficient, and useful for accessibility or listening to documents on the go.",
       githubLink: "https://github.com/yourusername/chat-app",
-      imageUrl: "https://via.placeholder.com/400x250?text=Chat+App"
+      technology: [
+        { name: 'Python' },
+        { name: 'GTTS' },
+        { name: 'PyPDF2' },
+      ]
     },
     {
-      title: "ToDo App",
-      description: "Simple task manager app built in React with local storage and priority tagging.",
+      title: "Student Management System",
+      description: "I developed a Student Management System that stores student records along with their marks and displays them in an organized format. The marks are inserted exclusively through the admin panel, ensuring controlled and authenticated access. This system helps manage academic records efficiently and is ideal for institutions and small coaching centers. You can explore the site online or download the project to run it locally for a hands-on experience.",
       githubLink: "https://github.com/yourusername/todo-app",
-      imageUrl: "https://via.placeholder.com/400x250?text=ToDo+App"
+      technology: [
+        { name: 'PHP' },
+        { name: 'HTML/CSS/JS' },
+        { name: 'MySQL' },
+      ]
     },
     {
       title: "Face Mask Detector",
@@ -190,7 +213,7 @@ function App() {
           </div> */}
                 <div className="project-content">
                   <h2>{project.title}</h2>
-                  <p style={{ textAlign: 'justify', fontSize: '17px'}}>{project.description}</p>
+                  <p style={{ textAlign: 'justify', fontSize: '17px' }}>{project.description}</p>
                   <a href={project.githubLink} className="apple-button">
                     <i className="fa-brands fa-github" style={{ color: '#ffffff' }}></i>
                   </a>
