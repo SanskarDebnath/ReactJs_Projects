@@ -85,9 +85,13 @@ function App() {
     },
     {
       title: "Weather App",
-      description: "Weather dashboard using React and OpenWeatherMap API with search and forecasts.",
+      description: "I built a Weather App using Python that fetches real-time weather data using the OpenWeatherMap API. The app retrieves and displays information like temperature, humidity, and weather conditions based on the user's input location. It was tested using FastAPI for building the backend endpoints and Postman for API testing. This lightweight and efficient app is ideal for learning how to work with APIs and building/testing RESTful services using Python.",
       githubLink: "https://github.com/yourusername/weather-app",
-      imageUrl: "https://via.placeholder.com/400x250?text=Weather+App"
+      technology: [
+        { name: 'Python' },
+        { name: 'FastApi' },
+        { name: 'Postman' },
+      ]
     },
     {
       title: "URL Shortener",
