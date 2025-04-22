@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import './App.css';
 import myImage from './assets/image.png'; // adjust the path if you're in a nested folder
-
+import cvPdf from './assets/cv.pdf'; 
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false); // Add this state for mobile menu
+
+
+
+
   const projects = [
     {
       title: "WRITE2DIGIT AI",
       description: "I developed an OCR-based web application that converts handwritten content into digital text using Python and machine learning. This project utilizes the LeNet-5 architecture, achieving model accuracies close to 99.88%, approaching near-perfect performance. The solution is structured into three separate models, each trained and evaluated independently. Every model includes its own testing accuracy and performance graphs to demonstrate effectiveness and reliability in real-world scenarios.",
-      githubLink: "https://github.com/yourusername/write2digit-ai",
+      githubLink: "https://github.com/SanskarDebnath/ML_Projects1",
       // imageUrl: "https://via.placeholder.com/400x250?text=WRITE2DIGIT+AI"
       technology: [
         { name: 'Python' },
@@ -21,7 +25,7 @@ function App() {
     {
       title: "Microsoft Edge profile picker",
       description: "I developed a custom Microsoft Edge profile picker that enables quick and easy profile switching with a sleek, user-friendly interface. The app features customizable avatars, icons, and wallpapers, which persist across sessions. Built with Python and Tkinter, it allows you to define profiles and manage settings seamlessly. Additionally, I optimized the app for better performance and quick startup using PyInstaller. Future improvements include auto-detection of Edge profiles, customizable themes, and faster optimizations.",
-      githubLink: "https://github.com/yourusername/portfolio-site",
+      githubLink: "https://github.com/SanskarDebnath/Microsoft-Edge-profile-Picker",
       technology: [
         { name: 'Python' },
         { name: 'Tkinter' },
@@ -33,7 +37,7 @@ function App() {
     {
       title: "PHP News Website",
       description: "I'm currently developing a dynamic news web application using PHP, HTML5, CSS3, JavaScript, and jQuery. The site is structured into three modules: admin, user, and reporter, each with distinct roles and access levels to manage and publish content. The project is still under development, with plans to integrate a payment gateway in the future to enable subscription-based access for premium content and features. This project aims to deliver a modern, scalable platform for digital news delivery.",
-      githubLink: "https://github.com/yourusername/ecommerce-api",
+      githubLink: "https://github.com/SanskarDebnath/NEWS_APP_PHP",
       // imageUrl: "https://via.placeholder.com/400x250?text=E-Commerce+API"
       technology: [
         { name: 'PHP' },
@@ -47,7 +51,7 @@ function App() {
     {
       title: "Django E-Commerce website",
       description: "I built a fully functional eCommerce website using Django, featuring a robust structure with separate modules for users, admin, and shopkeepers. The platform includes essential features like product listing, shopping cart, and user authentication, offering a smooth and organized online shopping experience. The project is complete in terms of core functionality, and I plan to integrate a payment gateway in the future to support secure transactions and order processing.",
-      githubLink: "https://github.com/yourusername/django-blog",
+      githubLink: "https://github.com/SanskarDebnath/DjangoProjects",
       technology: [
         { name: 'Python' },
         { name: 'Django' },
@@ -60,7 +64,7 @@ function App() {
     {
       title: "PDF-AUDIO converter",
       description: "I created a PDF to Audio Converter using Python that reads content from any PDF file and converts it into an audio file. The app uses PyPDF2 for extracting text from PDFs and gTTS (Google Text-to-Speech) to generate speech. Once processed, the audio file is automatically saved to a designated folder. This tool is simple, efficient, and useful for accessibility or listening to documents on the go.",
-      githubLink: "https://github.com/yourusername/chat-app",
+      githubLink: "https://github.com/SanskarDebnath/PDF_READER_to_AUDIO_CONVERTER",
       technology: [
         { name: 'Python' },
         { name: 'GTTS' },
@@ -70,7 +74,7 @@ function App() {
     {
       title: "Student Management System",
       description: "I developed a Student Management System that stores student records along with their marks and displays them in an organized format. The marks are inserted exclusively through the admin panel, ensuring controlled and authenticated access. This system helps manage academic records efficiently and is ideal for institutions and small coaching centers. You can explore the site online or download the project to run it locally for a hands-on experience.",
-      githubLink: "https://github.com/yourusername/todo-app",
+      githubLink: "https://github.com/SanskarDebnath/Student_management",
       technology: [
         { name: 'PHP' },
         { name: 'HTML/CSS/JS' },
@@ -78,43 +82,33 @@ function App() {
       ]
     },
     {
-      title: "Face Mask Detector",
-      description: "ML model using OpenCV & TensorFlow to detect if a person is wearing a mask in real-time.",
-      githubLink: "https://github.com/yourusername/face-mask-detector",
-      imageUrl: "https://via.placeholder.com/400x250?text=Mask+Detector"
+      title: "Offensive‑Word Filter & Censor",
+      description: "I created a Python script that automatically scans any text, detects words listed in offensive_words.txt, and censors them by replacing every character with “*”. Simply point the program at a text source—file, clipboard, or user input—and it returns a clean version with all flagged language obscured. Screenshots and code samples illustrate the straightforward workflow and the accuracy of the replacement logic.",
+      githubLink: "https://github.com/SanskarDebnath/offensive_words_finder",
+      technology: [
+        { name: 'Python' },
+      ]
     },
     {
       title: "Weather App",
       description: "I built a Weather App using Python that fetches real-time weather data using the OpenWeatherMap API. The app retrieves and displays information like temperature, humidity, and weather conditions based on the user's input location. It was tested using FastAPI for building the backend endpoints and Postman for API testing. This lightweight and efficient app is ideal for learning how to work with APIs and building/testing RESTful services using Python.",
-      githubLink: "https://github.com/yourusername/weather-app",
+      githubLink: "https://github.com/SanskarDebnath/Python_weather_app",
       technology: [
         { name: 'Python' },
         { name: 'FastApi' },
         { name: 'Postman' },
       ]
     },
-    {
-      title: "URL Shortener",
-      description: "Mini URL shortener using Node.js and MongoDB with tracking and analytics.",
-      githubLink: "https://github.com/yourusername/url-shortener",
-      imageUrl: "https://via.placeholder.com/400x250?text=URL+Shortener"
-    },
-    {
-      title: "Student Management System",
-      description: "A full-stack student portal using PHP and MySQL with CRUD operations.",
-      githubLink: "https://github.com/yourusername/student-management",
-      imageUrl: "https://via.placeholder.com/400x250?text=Student+System"
-    }
   ];
 
 
   const skills = [
-    { name: "Django", level: 85 },
-    { name: "PHP", level: 85 },
-    { name: "ReactJS", level: 50 },
-    { name: "Machine Learning", level: 80 },
-    { name: "Python", level: 95 },
-    { name: "C/C++", level: 75 },
+    { name: "Django", level: 80 },
+    { name: "PHP", level: 80 },
+    { name: "ReactJS", level: 40 },
+    { name: "Machine Learning", level: 60 },
+    { name: "Python", level: 80 },
+    { name: "C/C++", level: 65 },
     { name: "Git Version Control", level: 85 },
     { name: "HTML5/CSS3/JS", level: 95 },
     { name: "Database Design", level: 80 }
@@ -124,7 +118,14 @@ function App() {
     setDarkMode(!darkMode);
   };
 
+  const [showContactPopup, setShowContactPopup] = useState(false);
+
+  // Add this component inside your main div (before the footer)
+
   return (
+
+
+
 
     <div className={`apple-style-container ${darkMode ? 'dark-mode' : ''}`}>
       {/* Navbar */}
@@ -149,22 +150,29 @@ function App() {
           <div className={`navbar-right ${menuOpen ? 'active' : ''}`}>
             <button
               className="apple-nav-button"
-              onClick={() => setMenuOpen(false)}
+              onClick={() => {
+                setShowContactPopup(true);
+                setMenuOpen(false);
+              }}
             >
               Contact
             </button>
-            <button
+            {/* <button
               className="apple-nav-button"
               onClick={() => setMenuOpen(false)}
             >
               Projects
-            </button>
-            <button
-              className="apple-nav-button"
-              onClick={() => setMenuOpen(false)}
-            >
-              Resume
-            </button>
+            </button> */}
+<button
+  className="apple-nav-button"
+  onClick={() => {
+    window.open(cvPdf, '_blank', 'noopener,noreferrer');
+    setMenuOpen(false);
+  }}
+>
+  Resume
+</button>
+
             <button
               className="apple-nav-button dark-mode-toggle"
               onClick={() => {
@@ -177,6 +185,38 @@ function App() {
           </div>
         </div>
       </nav>
+
+
+
+      {showContactPopup && (
+        <div className={`contact-popup-overlay ${darkMode ? 'dark-mode' : ''}`}>
+          <div className={`contact-popup ${darkMode ? 'dark-mode' : ''}`}>
+            <button
+              className="close-popup"
+              onClick={() => setShowContactPopup(false)}
+              aria-label="Close contact popup"
+            >
+              <i className="fa-solid fa-xmark" style={{ color: '#ff0000' }}></i>
+            </button>
+            <h2 style={{ color: '#000' }}>Contact Me</h2>
+            <div className="contact-methods">
+              <a href="mailto:sanskardebnath2023@gmail.com" className="contact-link">
+                <i className="fas fa-envelope"></i> Email
+              </a>
+              <a href="https://www.linkedin.com/in/sanskardebnath/" className="contact-link">
+                <i className="fab fa-linkedin"></i> LinkedIn
+              </a>
+              <a href="https://github.com/SanskarDebnath" className="contact-link">
+                <i className="fab fa-github"></i> GitHub
+              </a>
+              <a href="tel:+916909072118" className="contact-link">
+                <i className="fas fa-phone"></i> Phone
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* About Section */}
       <section className={`about-section ${darkMode ? 'dark-mode' : ''}`}>
         <div className="about-content">
@@ -206,7 +246,7 @@ function App() {
 
       {/* Projects Section */}
       <section className={`projects-section ${darkMode ? 'dark-mode' : ''}`}>
-        <h2 style={{ color: '#000000' }}>My top 10 Projects</h2>
+        <h2 style={{ color: '#000000' }}>My top Projects</h2>
 
         <div className="projects-grid">
           {projects && projects.length > 0 ? (
@@ -300,7 +340,7 @@ function App() {
 
       {/* Skills Section */}
       <section className={`skills-section ${darkMode ? 'dark-mode' : ''}`}>
-        <h2>Technical Skills</h2>
+        <h2 style={{ color: '#000' }}>Technical Skills</h2>
         <div className="skills-container">
           {skills.map((skill, index) => (
             <div key={index} className="skill-item">
@@ -322,7 +362,7 @@ function App() {
       {/* Footer */}
       <footer className={`apple-footer ${darkMode ? 'dark-mode' : ''}`}>
         <div className="footer-content">
-          <p>© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Sanskar Debnath</p>
           <div className="footer-links">
             <a href="#"><i class="fa-brands fa-facebook" style={{ color: 'white' }}></i></a>
             <a href="#"><i class="fa-brands fa-github" style={{ color: 'white' }}></i></a>
@@ -334,6 +374,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
